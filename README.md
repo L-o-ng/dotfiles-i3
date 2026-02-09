@@ -9,7 +9,7 @@ This is a backup of my i3wm setup for arch linux.
 - `neovim`
 - `picom`
 - `polybar`
-- `teevee` (AUR)
+- `teevee` (AUR, ![Link](https://github.com/ThomasB3143/teevee))
 - `powerprofilesdaemon`
 ### Also Consider
 - `ly`
