@@ -11,12 +11,21 @@ This is a backup of my i3wm setup for arch linux.
 - `polybar`
 - `teevee` (AUR, ![Link](https://github.com/ThomasB3143/teevee))
 - `powerprofilesdaemon`
+- `xss-lock`, `i3lock` (lockscreen)
+- `feh`
+- `redshift`
+- `ollama`
+- `i3-auto-tiling` (AUR)
+- `pipewire`, `wireplumber`
+
 ### Also Consider
 - `ly`
 - `vesktop` (AUR)
-- `nnn`
+- `nnn`, `thunar`
 - `starship.rs` (via ![starship.rs](https://starship.rs/))
-- `pipewire`, `pavucontrol`, etc.
+- `pavucontrol`
+- `bluetui`
+- `pfetch` (or a preferred fetch)
 
 This should get you most of the way!
 
