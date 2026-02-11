@@ -6,7 +6,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # autostart
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3lock/lock.sh 
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-scale ~/documents/wallpapers/redsun.jpg
 exec --no-startup-id polybar mybar --reload -c ~/.config/polybar/polybar.conf
@@ -40,6 +40,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 bindsym $mod+Shift+p exec teevee run power
+bindsym $mod+Shift+m exec ~/.config/i3lock/lock.sh
 
 # window management
 # change focus

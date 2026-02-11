@@ -11,6 +11,9 @@
 !i3/
 !i3/**
 
+!i3lock/
+!i3lock/**
+
 !kitty/
 !kitty/**
 
@@ -26,3 +29,5 @@
 !teevee/
 !teevee/**
 
+!assets/
+!assets/**
