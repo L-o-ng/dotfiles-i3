@@ -17,7 +17,7 @@ local treesitter_builtin = require("nvim-treesitter")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls" }
+  ensure_installed = { "lua_ls", "clangd" }
 })
 require("telescope").setup {
   extensions = {
