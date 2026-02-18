@@ -2,6 +2,9 @@
 !.gitignore
 !*/
 
+!.bashrc
+!.xinitrc
+
 !dunst/
 !dunst/**
 
