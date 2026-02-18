@@ -29,4 +29,4 @@ This is a backup of my i3wm setup for arch linux.
 
 This should get you most of the way!
 ### Notes
-- When you clone this into your `.config/`, ensure that you either move `.bashrc`, `.xinitrc` back to `~/` or symlink with `ln -sfT ~/.config/.file ~/.file`.
+- When you clone this into your `.config/`, ensure that you either move `.bashrc`, `.xinitrc` back to `~/` or symlink with `ln -sfT ~/.config/<filename> ~/<filename>`.
