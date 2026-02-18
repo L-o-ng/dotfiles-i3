@@ -11,7 +11,8 @@ This is a backup of my i3wm setup for arch linux.
 - `polybar`
 - `teevee` (AUR, ![Link](https://github.com/ThomasB3143/teevee))
 - `powerprofilesdaemon`
-- `xss-lock`, `i3lock` (lockscreen)
+- `xss-lock`
+- `i3lock-color` (AUR)
 - `feh`
 - `redshift`
 - `ollama`
