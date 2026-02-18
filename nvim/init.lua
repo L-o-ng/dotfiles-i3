@@ -3,13 +3,14 @@ require("config.lazy")
 vim.cmd.colorscheme "catppuccin-mocha"
 
 vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.foldlevelstart = 50
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
 
 local telescope_builtin = require("telescope.builtin")
 local treesitter_builtin = require("nvim-treesitter")
@@ -17,7 +18,20 @@ local treesitter_builtin = require("nvim-treesitter")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "clangd" }
+  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright" }
+})
+vim.lsp.config("basedpyright", {
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "basic",
+        reportUnknownVariableType = "none",
+        reportUnknownParameterType = "none",
+        reportUnknownArgumentType = "none",
+        reportUnknownMemberType = "none",
+      },
+    },
+  },
 })
 require("telescope").setup {
   extensions = {
@@ -27,12 +41,12 @@ require("telescope").setup {
   }
 }
 require("telescope").load_extension("ui-select")
-
 vim.diagnostic.config({
-  virtual_text = true
+  virtual_text = true,
+  update_in_insert = true
 })
 treesitter_builtin.setup { install_dir = vim.fn.stdpath('data') .. '/site' }
-treesitter_builtin.install = { "lua", "rust", "c" }
+treesitter_builtin.install = { "lua", "rust", "c", "python" }
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'lua', 'rs', 'c', 'h' },
   callback = function() vim.treesitter.start() end,
@@ -45,4 +59,6 @@ vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {})
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set({'n', 'v'}, '<space>ca', vim.lsp.buf.code_action, {})
+vim.keymap.set('i', '<S-Tab>', '<C-o>l', {})
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {})
 
