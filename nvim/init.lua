@@ -59,6 +59,6 @@ vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {})
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set({'n', 'v'}, '<space>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('i', '<S-Tab>', '<C-o>l', {})
+vim.keymap.set('i', '<S-Tab>', '<C-o>A', {})
 vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {})
 
