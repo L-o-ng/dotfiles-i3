@@ -17,6 +17,7 @@ This is a backup of my i3wm setup for arch linux.
 - `ollama`
 - `i3-auto-tiling` (AUR)
 - `pipewire`, `wireplumber`
+- `pfetch` (or a preferred fetch - change in `.bashrc`)
 
 ### Also Consider
 - `ly`
@@ -25,7 +26,7 @@ This is a backup of my i3wm setup for arch linux.
 - `starship.rs` (via ![starship.rs](https://starship.rs/))
 - `pavucontrol`
 - `bluetui`
-- `pfetch` (or a preferred fetch)
 
 This should get you most of the way!
-
+### Notes
+- When you clone this into your `.config/`, ensure that you either move `.bashrc`, `.xinitrc` back to `~/` or symlink with `ln -sfT ~/.config/<filename> ~/<filename>`.
