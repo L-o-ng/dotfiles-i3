@@ -17,13 +17,15 @@ This is a backup of my i3wm setup for arch linux.
 - `ollama`
 - `i3-auto-tiling` (AUR)
 - `pipewire`, `wireplumber`
-- `pfetch` (or a preferred fetch - change in `.bashrc`)
 
 ### Also Consider
 - `ly`
 - `vesktop` (AUR)
 - `nnn`, `thunar`
 - `starship.rs` (via ![starship.rs](https://starship.rs/))
+- `pfetch` (or a preferred fetch - change in `.bashrc`)
+- `spotify` (AUR) 
+- `spicetify` (via ![spicetify.app](https://spicetify.app/))
 - `pavucontrol`
 - `bluetui`
 
