@@ -18,7 +18,7 @@ local treesitter_builtin = require("nvim-treesitter")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright" }
+  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "ruff" }
 })
 vim.lsp.config("basedpyright", {
   settings = {
@@ -48,7 +48,7 @@ vim.diagnostic.config({
 treesitter_builtin.setup { install_dir = vim.fn.stdpath('data') .. '/site' }
 treesitter_builtin.install = { "lua", "rust", "c", "python" }
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'rs', 'c', 'h' },
+  pattern = { 'lua', 'rs', 'c', 'h', 'py' },
   callback = function() vim.treesitter.start() end,
 })
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
