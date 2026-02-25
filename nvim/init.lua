@@ -18,21 +18,20 @@ local treesitter_builtin = require("nvim-treesitter")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "ruff" }
+  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "pylsp", "bashls" }
 })
 vim.lsp.config("basedpyright", {
   settings = {
     basedpyright = {
-      analysis = {
-        typeCheckingMode = "basic",
-        reportUnknownVariableType = "none",
-        reportUnknownParameterType = "none",
-        reportUnknownArgumentType = "none",
-        reportUnknownMemberType = "none",
-      },
-    },
+      typeCheckingMode = "off",
+      disableOrganizeImports = true,
+    }
   },
-})
+  handlers = {
+    ["textDocument/publishDiagnostics"] = function() end,
+  },
+  }
+)
 require("telescope").setup {
   extensions = {
     ["ui-select"] = {
@@ -46,9 +45,9 @@ vim.diagnostic.config({
   update_in_insert = true
 })
 treesitter_builtin.setup { install_dir = vim.fn.stdpath('data') .. '/site' }
-treesitter_builtin.install = { "lua", "rust", "c", "python" }
+treesitter_builtin.install = { "lua", "rust", "c", "python", "bash" }
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'rs', 'c', 'h', 'py' },
+  pattern = { 'lua', 'rs', 'c', 'h', "sh" },
   callback = function() vim.treesitter.start() end,
 })
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'

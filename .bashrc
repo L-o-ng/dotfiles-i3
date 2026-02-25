@@ -12,6 +12,15 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
 
+function cwd {
+    pwd | xclip -selection c
+}
+
+function mkcd {
+    mkdir -p $1
+    cd $1
+}
+
 PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:/home/dylan/.spicetify
