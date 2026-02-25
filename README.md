@@ -18,6 +18,7 @@ This is a backup of my i3wm setup for arch linux.
 - `ollama`
 - `i3-auto-tiling` (AUR)
 - `pipewire`, `wireplumber`
+- `xclip`
 
 ### Also Consider
 - `ly`
