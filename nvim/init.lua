@@ -13,7 +13,6 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 
 local telescope_builtin = require("telescope.builtin")
-local treesitter_builtin = require("nvim-treesitter")
 
 require("lualine").setup()
 require("mason").setup()
@@ -44,17 +43,18 @@ vim.diagnostic.config({
   virtual_text = true,
   update_in_insert = true
 })
-treesitter_builtin.setup { install_dir = vim.fn.stdpath('data') .. '/site' }
-treesitter_builtin.install = { "lua", "rust", "c", "python", "bash" }
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'rs', 'c', 'h', "sh" },
-  callback = function() vim.treesitter.start() end,
+vim.lsp.config("gdscript", {
+  name = "godot",
+  cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
 })
+
+require'nvim-treesitter'.install { 'rust', 'javascript', 'gdscript' }
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.wo[0][0].foldmethod = 'expr'
 
 vim.keymap.set('n', '<C-p>', telescope_builtin.find_files, {})
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {})
+vim.keymap.set('n', '<C-,>', ':Neotree close<CR>', {})
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set({'n', 'v'}, '<space>ca', vim.lsp.buf.code_action, {})

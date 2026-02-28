@@ -11,6 +11,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
+alias gdnvim='nvim --listen /tmp/godot.pipe'
 
 function cwd {
     pwd | xclip -selection c
