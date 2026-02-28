@@ -30,6 +30,8 @@ This is a backup of my i3wm setup for arch linux.
 - `spicetify` (via ![spicetify.app](https://spicetify.app/))
 - `pavucontrol`
 - `bluetui`
+- `nvim`
+- `tree-sitter-cli` (if using `nvim`)
 
 This should get you most of the way!
 ### Notes
