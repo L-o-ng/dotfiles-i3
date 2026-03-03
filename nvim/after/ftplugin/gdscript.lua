@@ -9,3 +9,4 @@ vim.lsp.start({
 })
 
 vim.treesitter.start()
+print("Started treesitter on gdscript")

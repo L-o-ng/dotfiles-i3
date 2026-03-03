@@ -32,6 +32,7 @@ This is a backup of my i3wm setup for arch linux.
 - `bluetui`
 - `nvim`
 - `tree-sitter-cli` (if using `nvim`)
+- `zathura`
 
 This should get you most of the way!
 ### Notes

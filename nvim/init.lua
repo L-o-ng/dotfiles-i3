@@ -39,16 +39,19 @@ require("telescope").setup {
   }
 }
 require("telescope").load_extension("ui-select")
+
 vim.diagnostic.config({
   virtual_text = true,
   update_in_insert = true
 })
+local diagnostics_enabled = true
+
 vim.lsp.config("gdscript", {
   name = "godot",
   cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
 })
 
-require'nvim-treesitter'.install { 'rust', 'javascript', 'gdscript' }
+require'nvim-treesitter'.install { 'rust', 'gdscript', 'python' }
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.wo[0][0].foldmethod = 'expr'
 
@@ -60,4 +63,7 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set({'n', 'v'}, '<space>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('i', '<S-Tab>', '<C-o>A', {})
 vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {})
-
+vim.keymap.set('n', '<space>td', function()
+  diagnostics_enabled = not diagnostics_enabled
+  vim.diagnostic.enable(diagnostics_enabled)
+end, { desc = 'Toggle diagnostics' })

@@ -22,6 +22,10 @@ function mkcd {
     cd $1
 }
 
+function zath {
+    zathura $1 & disown
+}
+
 PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:/home/dylan/.spicetify
