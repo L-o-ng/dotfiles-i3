@@ -12,10 +12,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
 alias gdnvim='nvim --listen /tmp/godot.pipe'
-alias g='git'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
 
 function cwd {
     pwd | xclip -selection c
@@ -28,6 +24,15 @@ function mkcd {
 
 function zath {
     zathura "$1" & disown
+}
+
+g() {
+    case "$1" in
+        a) shift; git add "$@" ;;
+        c) shift; git commit "$@" ;;
+        p) shift; git push "$@" ;;
+        *) git "$@" ;;
+    esac
 }
 
 PS1='[\u@\h \W]\$ '
