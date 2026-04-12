@@ -12,6 +12,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
 alias gdnvim='nvim --listen /tmp/godot.pipe'
+alias g='git'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
 
 function cwd {
     pwd | xclip -selection c
