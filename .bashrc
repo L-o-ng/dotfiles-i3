@@ -30,7 +30,11 @@ g() {
     case "$1" in
         a) shift; git add "$@" ;;
         c) shift; git commit "$@" ;;
-        p) shift; git push "$@" ;;
+        ps) shift; git push "$@" ;;
+        pl) shift; git pull "$@" ;;
+        s) shift; git status "$@" ;;
+        l) shift; git log --oneline --graph --decorate --all --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' ;;
+        c) shift; git checkout "$@" ;;
         *) git "$@" ;;
     esac
 }
