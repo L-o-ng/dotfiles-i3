@@ -1,0 +1,89 @@
+* {
+    bg0:    #141318;
+    bg1:    #1e1c24;
+    bg2:    #2a2733;
+    bg3:    #5a4f7a;
+    bg4:    #6e6090;
+
+    fg0:    #ddd8e8;
+    fg1:    #8a8099;
+    fg2:    #5a4f7a;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+    margin:             0;
+    padding:            0;
+    spacing:            0;
+}
+
+window {
+    background-color:   @bg1;
+    border:             2px;
+    border-color:       @bg3;
+    border-radius:      0px;
+    width:              520px;
+    location:           center;
+}
+
+mainbox {
+    padding:    12px;
+    spacing:    8px;
+}
+
+inputbar {
+    background-color:   @bg2;
+    border-radius:      0px;
+    padding:            10px 14px;
+    spacing:            8px;
+    children:           [ icon-search, entry ];
+}
+
+icon-search {
+    filename:       "search";
+    expand:         false;
+    size:           16px;
+    vertical-align: 0.5;
+    text-color:     @fg1;
+}
+
+entry {
+    text-color:         @fg0;
+    placeholder:        "Search apps...";
+    placeholder-color:  @fg1;
+    vertical-align:     0.5;
+}
+
+prompt, case-indicator { enabled: false; }
+
+listview {
+    background-color:   transparent;
+    lines:              8;
+    columns:            1;
+    spacing:            4px;
+    scrollbar:          false;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      0px;
+    padding:            8px 10px;
+    spacing:            10px;
+    children:           [ element-icon, element-text ];
+}
+
+element normal.normal    { background-color: transparent;  text-color: @fg0; }
+element normal.urgent    { background-color: @bg3;         text-color: @fg0; }
+element normal.active    { background-color: @bg2;         text-color: @fg0; }
+element selected.normal  { background-color: @bg3;         text-color: @fg0; }
+element selected.urgent  { background-color: @bg4;         text-color: @fg0; }
+element selected.active  { background-color: @bg4;         text-color: @fg0; }
+
+element-icon {
+    size:           24px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color:     inherit;
+}

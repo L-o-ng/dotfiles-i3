@@ -19,6 +19,7 @@ This is a backup of my i3wm setup for arch linux.
 - `i3-auto-tiling` (AUR)
 - `pipewire`, `wireplumber`
 - `xclip`
+- `rofi`
 
 You will also need a nerd font, and to configure it in i3 and polybar configs.
 

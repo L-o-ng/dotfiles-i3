@@ -36,3 +36,5 @@ lazy-lock.json
 !assets/
 !assets/**
 
+!rofi/
+!rofi/**

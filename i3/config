@@ -12,6 +12,7 @@ assign [class="vesktop"] $ws4
 # autostart
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3lock/lock.sh
 exec --no-startup-id dunst
+exec --no-startup-id snixembed --fork
 exec --no-startup-id feh --bg-scale ~/documents/wallpapers/redsun.jpg
 exec --no-startup-id polybar mybar --reload -c ~/.config/polybar/polybar.conf
 exec --no-startup-id redshift -l 54.775249:-1.584852
@@ -19,6 +20,7 @@ exec --no-startup-id setxkbmap -layout gb
 exec --no-startup-id ollama serve
 exec --no-startup-id obsidian
 exec --no-startup-id vesktop
+exec --no-startup-id tailscale systray
 
 exec_always --no-startup-id i3-auto-tiling
 exec_always --no-startup-id picom -b
@@ -40,7 +42,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme purple
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
