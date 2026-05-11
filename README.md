@@ -20,6 +20,8 @@ This is a backup of my i3wm setup for arch linux.
 - `pipewire`, `wireplumber`
 - `xclip`
 
+You will also need a nerd font, and to configure it in i3 and polybar configs.
+
 ### Also Consider
 - `ly`
 - `vesktop` (AUR)
@@ -33,6 +35,8 @@ This is a backup of my i3wm setup for arch linux.
 - `nvim`
 - `tree-sitter-cli` (if using `nvim`)
 - `zathura`
+- `obsidian`
+- `cava`
 
 This should get you most of the way!
 ### Notes
