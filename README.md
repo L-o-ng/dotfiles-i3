@@ -9,7 +9,7 @@ This is a backup of my i3wm setup for arch linux.
 - `neovim`
 - `picom`
 - `polybar`
-- `teevee` (AUR, ![Link](https://github.com/ThomasB3143/teevee))
+- `teevee` (AUR, [Link](https://github.com/ThomasB3143/teevee))
 - `powerprofilesdaemon`
 - `xss-lock`
 - `i3lock-color` (AUR)
@@ -27,10 +27,10 @@ You will also need a nerd font, and to configure it in i3 and polybar configs.
 - `ly`
 - `vesktop` (AUR)
 - `nnn`, `thunar`
-- `starship.rs` (via ![starship.rs](https://starship.rs/))
+- `starship.rs` (via [starship.rs](https://starship.rs/))
 - `pfetch` (or a preferred fetch - change in `.bashrc`)
 - `spotify` (AUR) 
-- `spicetify` (via ![spicetify.app](https://spicetify.app/))
+- `spicetify` (via [spicetify.app](https://spicetify.app/))
 - `pavucontrol`
 - `bluetui`
 - `nvim`
@@ -38,7 +38,7 @@ You will also need a nerd font, and to configure it in i3 and polybar configs.
 - `zathura`
 - `obsidian`
 - `cava`
-- `ghcup` (via ![haskell.org](https://www.haskell.org/ghcup/install/))
+- `ghcup` (via [haskell.org](https://www.haskell.org/ghcup/install/))
 
 This should get you most of the way!
 ### Notes
