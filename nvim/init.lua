@@ -17,7 +17,7 @@ local telescope_builtin = require("telescope.builtin")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "pylsp", "bashls", "ts_ls" }
+  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "pylsp", "bashls", "ts_ls", }
 })
 vim.lsp.config("basedpyright", {
   settings = {
@@ -51,7 +51,7 @@ vim.lsp.config("gdscript", {
   cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
 })
 
-require'nvim-treesitter'.install { 'rust', 'gdscript', 'python', 'bash', 'javascript', 'html' }
+require'nvim-treesitter'.install { 'rust', 'gdscript', 'python', 'bash', 'javascript', 'html', 'haskell' }
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.wo[0][0].foldmethod = 'expr'
 

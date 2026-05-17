@@ -1,0 +1,134 @@
+return {
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+  },
+
+  opts = function()
+    local cmp = require("cmp")
+
+    -- Register LSP completion capabilities
+    vim.lsp.config("*", {
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    })
+
+    vim.api.nvim_set_hl(0, "CmpGhostText", {
+      link = "Comment",
+      default = true,
+    })
+
+    local auto_select = true
+
+    return {
+      completion = {
+        completeopt =
+          "menu,menuone,noinsert"
+          .. (auto_select and "" or ",noselect"),
+      },
+
+      preselect = auto_select
+          and cmp.PreselectMode.Item
+          or cmp.PreselectMode.None,
+
+      mapping = cmp.mapping.preset.insert({
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+
+        ["<C-n>"] = cmp.mapping.select_next_item({
+          behavior = cmp.SelectBehavior.Insert,
+        }),
+
+        ["<C-p>"] = cmp.mapping.select_prev_item({
+          behavior = cmp.SelectBehavior.Insert,
+        }),
+
+        ["<C-Space>"] = cmp.mapping.complete(),
+
+        ["<CR>"] = cmp.mapping.confirm({
+          select = auto_select,
+        }),
+
+        ["<C-y>"] = cmp.mapping.confirm({
+          select = true,
+        }),
+
+        ["<S-CR>"] = cmp.mapping.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+        }),
+
+        ["<C-CR>"] = function(fallback)
+          cmp.abort()
+          fallback()
+        end,
+
+        ["<Tab>"] = function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          else
+            fallback()
+          end
+        end,
+
+        ["<S-Tab>"] = function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          else
+            fallback()
+          end
+        end,
+      }),
+
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "path" },
+      }, {
+        { name = "buffer" },
+      }),
+
+      formatting = {
+        format = function(_, item)
+          local icons = {
+            Text = "󰉿 ",
+            Method = "󰆧 ",
+            Function = "󰊕 ",
+            Constructor = " ",
+            Field = "󰜢 ",
+            Variable = "󰀫 ",
+            Class = "󰠱 ",
+            Interface = " ",
+            Module = "󰏗 ",
+            Property = "󰜢 ",
+            Unit = "󰑭 ",
+            Value = "󰎠 ",
+            Enum = "󰕘 ",
+            Keyword = "󰌋 ",
+            Snippet = " ",
+            Color = "󰏘 ",
+            File = "󰈙 ",
+            Reference = "󰈇 ",
+            Folder = "󰉋 ",
+            EnumMember = "󰕘 ",
+            Constant = "󰏿 ",
+            Struct = "󰙅 ",
+            Event = " ",
+            Operator = "󰆕 ",
+            TypeParameter = "󰊄 ",
+          }
+
+          if icons[item.kind] then
+            item.kind = icons[item.kind] .. item.kind
+          end
+
+          return item
+        end,
+      },
+
+      experimental = {
+        ghost_text = false,
+      },
+    }
+  end,
+}

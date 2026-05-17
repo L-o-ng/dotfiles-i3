@@ -42,8 +42,10 @@ g() {
 PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:/home/dylan/.spicetify
+[ -f "/home/dylan/.ghcup/env" ] && . "/home/dylan/.ghcup/env" # ghcup-env
 
 wallust run -q -p harddark ~/documents/wallpapers/redsun.jpg
 pfetch
 eval "$(starship init bash)"
+
 

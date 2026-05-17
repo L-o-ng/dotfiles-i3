@@ -38,6 +38,7 @@ You will also need a nerd font, and to configure it in i3 and polybar configs.
 - `zathura`
 - `obsidian`
 - `cava`
+- `ghcup` (via ![haskell.org](https://www.haskell.org/ghcup/install/))
 
 This should get you most of the way!
 ### Notes
