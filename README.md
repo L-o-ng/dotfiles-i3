@@ -39,6 +39,7 @@ You will also need a nerd font, and to configure it in i3 and polybar configs.
 - `obsidian`
 - `cava`
 - `ghcup` (via [haskell.org](https://www.haskell.org/ghcup/install/))
+- `maven`, `jdk-openjdk`
 
 This should get you most of the way!
 ### Notes

@@ -17,7 +17,7 @@ local telescope_builtin = require("telescope.builtin")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "pylsp", "bashls", "ts_ls", }
+  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "pylsp", "bashls", "ts_ls", "hls", "jdtls" }
 })
 vim.lsp.config("basedpyright", {
   settings = {
@@ -51,7 +51,6 @@ vim.lsp.config("gdscript", {
   cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
 })
 
-require'nvim-treesitter'.install { 'rust', 'gdscript', 'python', 'bash', 'javascript', 'html', 'haskell' }
 vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.wo[0][0].foldmethod = 'expr'
 
@@ -67,3 +66,14 @@ vim.keymap.set('n', '<space>td', function()
   diagnostics_enabled = not diagnostics_enabled
   vim.diagnostic.enable(diagnostics_enabled)
 end, { desc = 'Toggle diagnostics' })
+vim.keymap.set({'i', 's'}, '<C-j>', function()
+  if vim.snippet.active({ direction = 1 }) then
+    vim.snippet.jump(1)
+  end
+end, { silent = true })
+
+vim.keymap.set({'i', 's'}, '<C-k>', function()
+  if vim.snippet.active({ direction = -1 }) then
+    vim.snippet.jump(-1)
+  end
+end, { silent = true })
