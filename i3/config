@@ -12,7 +12,7 @@ assign [class="vesktop"] $ws4
 # autostart
 exec --no-startup-id dunst
 exec --no-startup-id snixembed --fork
-exec --no-startup-id feh --bg-scale ~/documents/wallpapers/redsun.jpg
+exec --no-startup-id feh --bg-scale ~/.config/assets/wallpapers/redsun.jpg
 exec --no-startup-id polybar mybar --reload -c ~/.config/polybar/polybar.conf
 exec --no-startup-id redshift -l 54.775249:-1.584852
 exec --no-startup-id setxkbmap -layout gb
@@ -20,6 +20,9 @@ exec --no-startup-id ollama serve
 exec --no-startup-id obsidian
 exec --no-startup-id vesktop
 exec --no-startup-id tailscale systray
+
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
 
 exec_always --no-startup-id i3-auto-tiling
 exec_always --no-startup-id picom -b
@@ -134,7 +137,6 @@ bar {
     tray_output none
     strip_workspace_numbers yes
 }
-
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #6a5acd #4b3f72 #ffffff #8b7cff   #4b3f72

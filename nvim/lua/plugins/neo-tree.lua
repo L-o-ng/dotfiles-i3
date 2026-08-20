@@ -7,6 +7,12 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons",
     },
+    opts = {
+      window = { position = "right" },
+      filesystem = {
+        window = { position = "right" },
+      },
+    },
     lazy = false, -- neo-tree will lazily load itself
   }
 }

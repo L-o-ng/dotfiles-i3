@@ -1,5 +1,9 @@
 -- Neovim Init --
 require("config.lazy")
+
+require("catppuccin").setup({
+  transparent_background = true,
+})
 vim.cmd.colorscheme "catppuccin-mocha"
 
 vim.opt.expandtab = true
@@ -56,7 +60,6 @@ vim.wo[0][0].foldmethod = 'expr'
 
 vim.keymap.set('n', '<C-p>', telescope_builtin.find_files, {})
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {})
-vim.keymap.set('n', '<C-,>', ':Neotree close<CR>', {})
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set({'n', 'v'}, '<space>ca', vim.lsp.buf.code_action, {})
