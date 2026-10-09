@@ -40,16 +40,16 @@ set $right l
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Return exec kitty
-bindsym $mod+Shift+s exec flameshot gui
+bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun -theme purple
 bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
-bindsym $mod+Shift+p exec teevee run power
-bindsym $mod+Shift+m exec ~/.config/i3lock/lock.sh
+bindsym $mod+Shift+p exec --no-startup-id teevee run power
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3lock/lock.sh
 
 # window management
 # change focus
