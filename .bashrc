@@ -42,6 +42,8 @@ g() {
 PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:/home/dylan/.spicetify
+export PATH=$PATH:/home/dylan/documents/path/texpresso/build
+
 [ -f "/home/dylan/.ghcup/env" ] && . "/home/dylan/.ghcup/env" # ghcup-env
 
 wallust run -q -p dark ~/.config/assets/wallust.jpg

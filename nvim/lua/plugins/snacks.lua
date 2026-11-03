@@ -5,7 +5,7 @@ return {
     ---@type snacks.config
     opts = {
       animate = { enabled = true },
-      image = { enabled = true },
+      image = { math = { enabled = false } },
       debug = { enabled = true },
       bigfile = { enabled = true },
       notifier = { enabled = true, top_down = false },

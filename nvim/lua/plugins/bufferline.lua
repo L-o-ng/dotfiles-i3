@@ -7,7 +7,8 @@ return {
 		{ "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
 		{ "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
 		{ "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle pin" },
-		{ "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close other buffers" },
+		{ "<space>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close other buffers" },
+        { "<space>x", "<cmd>bdelete!<cr>", desc = "Close Buffer" },
 	},
 	opts = {
 		options = {

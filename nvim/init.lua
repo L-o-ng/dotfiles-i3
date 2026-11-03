@@ -21,20 +21,8 @@ local telescope_builtin = require("telescope.builtin")
 require("lualine").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "basedpyright", "pylsp", "bashls", "ts_ls", "hls", "jdtls" }
+  ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "bashls", "ts_ls", "hls", "jdtls", "texlab", "roslyn_ls" }
 })
-vim.lsp.config("basedpyright", {
-  settings = {
-    basedpyright = {
-      typeCheckingMode = "off",
-      disableOrganizeImports = true,
-    }
-  },
-  handlers = {
-    ["textDocument/publishDiagnostics"] = function() end,
-  },
-  }
-)
 require("telescope").setup {
   extensions = {
     ["ui-select"] = {
@@ -69,14 +57,15 @@ vim.keymap.set('n', '<space>td', function()
   diagnostics_enabled = not diagnostics_enabled
   vim.diagnostic.enable(diagnostics_enabled)
 end, { desc = 'Toggle diagnostics' })
+vim.keymap.set('n', '<space>tex', ':TeXpresso %<CR>')
 vim.keymap.set({'i', 's'}, '<C-j>', function()
   if vim.snippet.active({ direction = 1 }) then
     vim.snippet.jump(1)
   end
 end, { silent = true })
-
 vim.keymap.set({'i', 's'}, '<C-k>', function()
   if vim.snippet.active({ direction = -1 }) then
     vim.snippet.jump(-1)
   end
 end, { silent = true })
+
